@@ -3,36 +3,203 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Privacy Policy — Zikrly (Tasbih Counter)</title>
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0F1A17" />
+  <title>Privacy Policy — Zikrly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #222; }
-    h1 { font-size: 1.5rem; }
-    h2 { font-size: 1.1rem; margin-top: 1.5rem; }
-    .muted { color: #555; font-size: 0.9rem; }
+    /*
+      Matches app palette: lib/app/app_palette.dart (dark / spiritual theme)
+      forestDeep #0F1A17, forestSurface #162922, goldAccent #C9A352, beigeAccent #E8DCC3
+    */
+    :root {
+      --bg-deep: #0f1a17;
+      --bg-mid: #162922;
+      --bg-elevated: #1f3830;
+      --gold: #c9a352;
+      --beige: #e8dcc3;
+      --text: #ffffff;
+      --text-muted: #b0b0b0;
+      --outline: rgba(232, 220, 195, 0.22);
+      --radius: 16px;
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg-deep);
+      background-image:
+        radial-gradient(ellipse 120% 80% at 50% -20%, rgba(201, 163, 82, 0.12), transparent 50%),
+        radial-gradient(ellipse 80% 50% at 100% 50%, rgba(22, 41, 34, 0.9), transparent),
+        radial-gradient(ellipse 60% 40% at 0% 80%, rgba(31, 56, 48, 0.5), transparent),
+        linear-gradient(180deg, #0f1a17 0%, #0a1210 100%);
+      background-attachment: fixed;
+    }
+
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: clamp(1.25rem, 4vw, 2.5rem);
+      padding-bottom: 3rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 0.8125rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .brand::before {
+      content: "";
+      width: 2rem;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.85;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.5rem, 4vw, 1.75rem);
+      font-weight: 700;
+      color: var(--beige);
+      letter-spacing: -0.02em;
+    }
+
+    .updated {
+      margin: 0.75rem 0 0;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    main {
+      background: var(--bg-mid);
+      border: 1px solid var(--outline);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(1.25rem, 3vw, 2rem);
+    }
+
+    main > p:first-of-type {
+      margin-top: 0;
+      color: var(--text-muted);
+      font-size: 0.9375rem;
+    }
+
+    h2 {
+      margin: 1.75rem 0 0.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--outline);
+    }
+
+    h2:first-of-type {
+      margin-top: 0.5rem;
+    }
+
+    p {
+      margin: 0.65rem 0 0;
+      color: var(--text);
+    }
+
+    p + p {
+      margin-top: 0.85rem;
+    }
+
+    strong {
+      color: var(--beige);
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Privacy Policy</h1>
-  <p class="muted">Last updated: 21 April 2026</p>
-  <p>This policy describes how the <strong>Zikrly</strong> app (“the app”) handles information when you use it.</p>
+  <div class="wrap">
+    <header>
+      <div class="brand">Zikrly</div>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: <!-- e.g. 21 April 2026 --></p>
+    </header>
 
-  <h2>Who we are</h2>
-  <p>Raza Sultan</p>
-  <p>Contact: raza_sultan@hotmail.com</p>
+    <main>
+      <p>
+        This policy describes how the <strong>Zikrly</strong> app (“the app”) handles information when you use it.
+      </p>
 
-  <h2>Data stored on your device</h2>
-  <p>The app stores dhikr counts, goals, session history, reminders, and preferences on your device. You can erase app data from the app’s settings. Uninstalling the app removes local data from your device.</p>
+      <h2>Who we are</h2>
+      <p><!-- Your name or developer name --></p>
+      <p>Contact: <!-- your email --></p>
 
-  <h2>Accounts</h2>
-  <p>The app does not require an account or login.</p>
+      <h2>Data stored on your device</h2>
+      <p>
+        The app stores dhikr counts, goals, session history, reminders, and preferences on your device. You can erase app data from the app’s settings. Uninstalling the app removes local data from your device.
+      </p>
 
-  <h2>Advertising</h2>
-  <p>If ads are shown, ad providers (for example Google AdMob) may use identifiers and technical data needed to serve and measure ads, according to their policies.</p>
+      <h2>Accounts</h2>
+      <p>The app does not require an account or login.</p>
 
-  <h2>In-app purchases</h2>
-  <p>Purchases (such as removing ads) are processed by Google Play. We do not receive your full payment card details.</p>
+      <h2>Advertising</h2>
+      <p>
+        If ads are shown, ad providers (for example Google AdMob) may use identifiers and technical data needed to serve and measure ads, according to their policies.
+      </p>
 
-  <h2>Changes</h2>
-  <p>We may update this policy. The “Last updated” date will change when we do.</p>
+      <h2>In-app purchases</h2>
+      <p>
+        Purchases (such as removing ads) are processed by Google Play. We do not receive your full payment card details.
+      </p>
+
+      <h2>Changes</h2>
+      <p>We may update this policy. The “Last updated” date will change when we do.</p>
+    </main>
+
+    <footer>
+      Tasbih Counter · Zikr, Tasbeeh
+    </footer>
+  </div>
 </body>
 </html>
